@@ -92,7 +92,9 @@ GLuint c3_exercise_3::loadTexture()
 	int width, height;
 	unsigned char *image;
 
-	image = SOIL_load_image("Content\\sample.png", &width, &height, 0, SOIL_LOAD_RGB);
+	std::string kittenTexPath = getBasePath() + "Content\\sample.png";
+
+	image = SOIL_load_image(kittenTexPath.c_str(), &width, &height, 0, SOIL_LOAD_RGB);
 	printf("%s\n", SOIL_last_result());
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 	SOIL_free_image_data(image);

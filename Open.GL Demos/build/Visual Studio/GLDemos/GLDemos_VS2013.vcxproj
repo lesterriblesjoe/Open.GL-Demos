@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9B232CE7-8DDC-498A-98A6-335F0D9DC40B}</ProjectGuid>
+    <RootNamespace>GLDemos_VS2013</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <GLEWFileName>glew32sd.lib</GLEWFileName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <GLEWFileName>glew32s.lib</GLEWFileName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\..\GLEW\include;..\..\..\..\GLM;..\..\..\..\SDL\include;..\..\..\..\SOIL\soil\inc\SOIL;..\..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "..\..\..\..\SDL\VisualC\SDL\$(Platform)\$(Configuration)\SDL2.dll" "$(TargetDir)\SDL2.dll"
+xcopy "..\..\..\content" "$(TargetDir)\Content\" /s /e /y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\..\GLEW\include;..\..\..\..\GLM;..\..\..\..\SDL\include;..\..\..\..\SOIL\soil\inc\SOIL;..\..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "..\..\..\..\SDL\VisualC\SDL\$(Platform)\$(Configuration)\SDL2.dll" "$(TargetDir)\SDL2.dll"
+xcopy "..\..\..\content" "$(TargetDir)\Content\" /s /e /y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\c2_color_triangle.h" />
+    <ClInclude Include="..\..\..\src\c2_exercise_1.h" />
+    <ClInclude Include="..\..\..\src\c2_exercise_2.h" />
+    <ClInclude Include="..\..\..\src\c2_triangle.h" />
+    <ClInclude Include="..\..\..\src\c2_triangle_elements.h" />
+    <ClInclude Include="..\..\..\src\c2_triangle_uniform.h" />
+    <ClInclude Include="..\..\..\src\c3_basic.h" />
+    <ClInclude Include="..\..\..\src\c3_exercise_1.h" />
+    <ClInclude Include="..\..\..\src\c3_exercise_2.h" />
+    <ClInclude Include="..\..\..\src\c3_exercise_3.h" />
+    <ClInclude Include="..\..\..\src\c3_multitexture.h" />
+    <ClInclude Include="..\..\..\src\c4_3d.h" />
+    <ClInclude Include="..\..\..\src\c4_exercise_1.h" />
+    <ClInclude Include="..\..\..\src\c4_exercise_2.h" />
+    <ClInclude Include="..\..\..\src\c4_transformation.h" />
+    <ClInclude Include="..\..\..\src\c5_cube.h" />
+    <ClInclude Include="..\..\..\src\c5_reflections.h" />
+    <ClInclude Include="..\..\..\src\Tutorial.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\c2_color_triangle.cpp" />
+    <ClCompile Include="..\..\..\src\c2_exercise_1.cpp" />
+    <ClCompile Include="..\..\..\src\c2_exercise_2.cpp" />
+    <ClCompile Include="..\..\..\src\c2_triangle.cpp" />
+    <ClCompile Include="..\..\..\src\c2_triangle_elements.cpp" />
+    <ClCompile Include="..\..\..\src\c2_triangle_uniform.cpp" />
+    <ClCompile Include="..\..\..\src\c3_basic.cpp" />
+    <ClCompile Include="..\..\..\src\c3_exercise_1.cpp" />
+    <ClCompile Include="..\..\..\src\c3_exercise_2.cpp" />
+    <ClCompile Include="..\..\..\src\c3_exercise_3.cpp" />
+    <ClCompile Include="..\..\..\src\c3_multitexture.cpp" />
+    <ClCompile Include="..\..\..\src\c4_3d.cpp" />
+    <ClCompile Include="..\..\..\src\c4_exercise_1.cpp" />
+    <ClCompile Include="..\..\..\src\c4_exercise_2.cpp" />
+    <ClCompile Include="..\..\..\src\c4_transformation.cpp" />
+    <ClCompile Include="..\..\..\src\c5_cube.cpp" />
+    <ClCompile Include="..\..\..\src\c5_reflections.cpp" />
+    <ClCompile Include="..\..\..\src\prgm.cpp" />
+    <ClCompile Include="..\..\..\src\Tutorial.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\..\GLEW\lib\$(Configuration)\$(Platform)\$(GLEWFileName)" />
+    <Library Include="..\..\..\..\SDL\VisualC\SDL\$(Platform)\$(Configuration)\SDL2.lib" />
+    <Library Include="..\..\..\..\SOIL\build\Visual Studio\$(Configuration)\SOIL.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\content\sample.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="..\..\..\content\sample2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -93,9 +93,13 @@ void c5_cube::loadTextures(std::array<GLuint, 2> &textures, GLuint shaderProgram
 	int width, height;
 	unsigned char *image;
 
+	std::string basePath = getBasePath();
+	std::string kittenTexPath = basePath + "Content\\sample.png";
+	std::string puppyTexPath = basePath + "Content\\sample2.png";
+
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, textures[0]);
-	image = SOIL_load_image("Content\\sample.png", &width, &height, 0, SOIL_LOAD_RGB);
+	image = SOIL_load_image(kittenTexPath.c_str(), &width, &height, 0, SOIL_LOAD_RGB);
 	printf("%s\n", SOIL_last_result());
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 	SOIL_free_image_data(image);
@@ -104,7 +108,7 @@ void c5_cube::loadTextures(std::array<GLuint, 2> &textures, GLuint shaderProgram
 
 	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_2D, textures[1]);
-	image = SOIL_load_image("Content\\sample2.png", &width, &height, 0, SOIL_LOAD_RGB);
+	image = SOIL_load_image(puppyTexPath.c_str(), &width, &height, 0, SOIL_LOAD_RGB);
 	printf("%s\n", SOIL_last_result());
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 	SOIL_free_image_data(image);

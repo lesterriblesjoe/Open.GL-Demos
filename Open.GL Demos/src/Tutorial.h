@@ -1,4 +1,9 @@
 #pragma once
+
+#include <string>
+
+std::string getBasePath();
+
 class Tutorial
 {
 public:
