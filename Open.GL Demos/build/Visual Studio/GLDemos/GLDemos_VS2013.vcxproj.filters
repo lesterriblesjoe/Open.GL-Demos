@@ -133,11 +133,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\..\..\GLEW\lib\$(Configuration)\$(Platform)\$(GLEWFileName)" />
-    <Library Include="..\..\..\..\SDL\VisualC\SDL\$(Platform)\$(Configuration)\SDL2.lib" />
-    <Library Include="..\..\..\..\SOIL\build\Visual Studio\$(Configuration)\SOIL.lib" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="..\..\..\content\sample.png">
       <Filter>Content</Filter>
     </Image>

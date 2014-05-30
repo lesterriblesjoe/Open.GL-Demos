@@ -20,7 +20,6 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
-    <GLEWFileName>glew32sd.lib</GLEWFileName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -28,7 +27,6 @@
     <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <GLEWFileName>glew32s.lib</GLEWFileName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -119,17 +117,23 @@ xcopy "..\..\..\content" "$(TargetDir)\Content\" /s /e /y</Command>
     <ClCompile Include="..\..\..\src\Tutorial.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\..\..\GLEW\lib\$(Configuration)\$(Platform)\$(GLEWFileName)" />
-    <Library Include="..\..\..\..\SDL\VisualC\SDL\$(Platform)\$(Configuration)\SDL2.lib" />
-    <Library Include="..\..\..\..\SOIL\build\Visual Studio\$(Configuration)\SOIL.lib" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="..\..\..\content\sample.png">
       <DeploymentContent>true</DeploymentContent>
     </Image>
     <Image Include="..\..\..\content\sample2.png">
       <DeploymentContent>true</DeploymentContent>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\GLEW\build\Visual Studio\GLEW\GLEW_VS2013.vcxproj">
+      <Project>{c3af839f-f489-4004-b7b1-55e598dcd334}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\SDL\VisualC\SDL\SDL_VS2013.vcxproj">
+      <Project>{81ce8daf-ebb2-4761-8e45-b71abcca8c68}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\SOIL\build\Visual Studio\SOIL\SOIL_VS2013.vcxproj">
+      <Project>{8b971507-4ba7-47e3-bf06-6bd384725ef6}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
