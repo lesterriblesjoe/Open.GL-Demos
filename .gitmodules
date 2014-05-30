@@ -1,9 +1,6 @@
 [submodule "GLM"]
 	path = GLM
 	url = https://github.com/g-truc/glm.git
-[submodule "GLEW"]
-	path = GLEW
-	url = https://github.com/nigels-com/glew.git
 [submodule "SDL"]
 	path = SDL
 	url = https://github.com/spurious/SDL-mirror.git
