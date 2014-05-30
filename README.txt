@@ -11,8 +11,8 @@ Suite of code demos "mostly" following the samples and exercises from http://ope
 To build this project:
 
 git clone https://github.com/danlbarron/Open.GL-Demos Open.GL-Demos
-git submodules init
-git submodules update
+git submodule init
+git submodule update
 
 
 Locate the according solution folder in "Open.GL Demos/build"
